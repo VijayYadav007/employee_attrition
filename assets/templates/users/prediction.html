@@ -1,0 +1,105 @@
+{% extends 'users/userbase.html' %}
+
+{% block contents %}
+<style>
+    body {
+        background-color: #f0f0f0; /* Light background for contrast */
+        font-family: Arial, sans-serif; /* Set a clean font */
+    }
+
+    .form-container {
+        max-width: 400px; /* Limit the width of the form */
+        margin: 50px auto; /* Center the form on the page */
+        padding: 20px; /* Add padding inside the form */
+        background-color: white; /* White background for the form */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    h2 {
+        text-align: center; /* Center the heading */
+        color: #333; /* Darker color for the heading */
+    }
+
+    label {
+        display: block; /* Ensure labels take full width */
+        margin: 10px 0 5px; /* Spacing around labels */
+        color: #555; /* Medium gray for labels */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Make inputs take full width */
+        padding: 10px; /* Padding inside inputs */
+        margin-bottom: 15px; /* Space below inputs */
+        border: 1px solid #ccc; /* Light gray border */
+        border-radius: 4px; /* Rounded corners */
+        box-sizing: border-box; /* Include padding and border in element's total width */
+    }
+
+    button {
+        background-color: #007BFF; /* Blue background for button */
+        color: white; /* White text for button */
+        border: none; /* Remove border */
+        border-radius: 4px; /* Rounded corners for button */
+        padding: 10px; /* Padding inside button */
+        cursor: pointer; /* Change cursor on hover */
+        width: 100%; /* Full width button */
+        font-size: 16px; /* Larger font for better readability */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Error message styling */
+    .error-message {
+        color: red; /* Red color for error messages */
+        margin-top: 10px; /* Space above error messages */
+    }
+</style>
+
+<div class="form-container">
+    <h2>Employee Attrition Prediction</h2>
+    
+    <form method="POST" action="{% url 'prediction' %}">
+        {% csrf_token %}
+        <label for="Age">Age:</label>
+        <input type="text" name="Age" placeholder="age" required>
+        
+        <label for="JobLevel">Job Level:</label>
+        <input type="text" name="JobLevel" placeholder="0-5" required>
+        
+        <label for="MaritalStatus">Marital Status:</label>
+        <input type="text" name="MaritalStatus" placeholder="0-2" required>
+        
+        <label for="MonthlyIncome">Monthly Income:</label>
+        <input type="text" name="MonthlyIncome" placeholder="salary" required>
+        
+        <label for="OverTime">Over Time:</label>
+        <input type="text" name="OverTime" placeholder="0/1" required>
+        
+        <label for="StockOptionLevel">Stock Option Level:</label>
+        <input type="text" name="StockOptionLevel" placeholder="0-1" required>
+        
+        <label for="TotalWorkingYears">Total Working Years:</label>
+        <input type="text" name="TotalWorkingYears" placeholder="0-10" required>
+        
+        <label for="YearsAtCompany">Years At Company:</label>
+        <input type="text" name="YearsAtCompany" placeholder="experience" required>
+        
+        <label for="YearsInCurrentRole">Years In Current Role:</label>
+        <input type="text" name="YearsInCurrentRole" placeholder="experience in current Role"required>
+        
+        <label for="YearsWithCurrManager">Years With Current Manager:</label>
+        <input type="text" name="YearsWithCurrManager" placeholder="with Current Manager experience"required>
+
+        <button type="submit">Submit</button>
+        
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'users/userbase.html' %}
+{% load static %} 
+{% block contents %}
+<body>
+  <style>
+    body {
+      background-image: url("{% static 'img/employee-attrition.jpg' %}"); /* Replace with the relative path */
+      background-size: cover; /* Cover the entire background */
+      background-position: center; /* Center the background image */
+      background-repeat: no-repeat; /* Do not repeat the background image */
+      font-family: Arial, Helvetica, sans-serif; /* Apply a clean font */
+      color: #333; /* Text color */
+    }
+  
+    .content {
+      background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background for readability */
+      padding: 20px; /* Add padding */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      max-width: 600px; /* Set maximum width */
+      margin: 50px auto; /* Center the content */
+    }
+  
+    b {
+      color: #007BFF; /* Highlighted color for important terms */
+    }
+    span {
+      color: Red; /* Highlighted color for important terms */
+      font-size: 30px;
+      font-weight: bold;
+    }
+  
+    hr {
+      margin: 20px 0; /* Space around the horizontal line */
+    }
+  
+    .grid {
+      margin-top: 20px; /* Add space above any additional content */
+    }
+  </style>
+  
+  <section class="content">
+      <div><b>Employee Attrition</b><br>
+        Employee attrition is when workers leave a company, often on their own, without the company hiring someone to replace them. This can happen for various reasons, like:
+        <br><br>
+        <b>Resignation:</b> An employee decides to leave for a new job or personal reasons.
+        <br><b>Retirement:</b> An employee finishes their career and retires.
+      </div>
+     <hr> 
+     <p>
+          {% if prediction %}
+              <strong>Prediction Result: </strong><span>{{ prediction }}</span>
+          {% else %}
+              <strong>No prediction made yet.</strong>
+          {% endif %}
+      </p>
+      <div class="grid">
+          <!-- Any additional content you want to display -->
+      </div>
+  </section>
+  </body>
+  {% endblock %}

@@ -1,0 +1,26 @@
+{%extends 'admins/adminbase.html'%}
+{%block contents%}
+
+<section id="main-content">
+
+    <div class="content" id="alerts">
+        <h2>Understanding Employee Attrition</h2>
+        <p>Employee attrition refers to the gradual reduction of the workforce through resignations, retirements, or deaths. It is crucial for organizations to understand the underlying reasons for attrition, which can include factors such as lack of career advancement opportunities, unsatisfactory work conditions, or personal issues. Analyzing these factors can help organizations implement effective retention strategies and improve employee engagement.</p>
+    </div>
+
+    <div class="content" id="logs">
+        <h2>Data Collection and Analysis</h2>
+        <p>The detection and prediction of employee attrition begin with data collection. This project utilizes a dataset containing employee information, including demographics, performance evaluations, salary data, and engagement surveys. By analyzing this data using various machine learning algorithms, we can identify patterns and trends that indicate a higher likelihood of attrition. Feature selection and engineering play a vital role in enhancing the predictive capabilities of our model.</p>
+    </div>
+
+    <div class="content" id="settings">
+        <h2>Model Development</h2>
+        <p>We employ various machine learning techniques, including Random Forest, Logistic Regression, and Support Vector Machines, to develop our predictive model. Each model's performance is evaluated using metrics such as accuracy, precision, recall, and F1-score. The Random Forest algorithm, in particular, is used for its robustness in handling diverse datasets and its ability to provide insights into feature importance.</p>
+    </div>
+
+    <div class="content" id="help">
+        <h2>Implementation and Impact</h2>
+        <p>The final model is deployed in a web application that allows HR managers to input employee data and receive real-time predictions regarding the likelihood of attrition. By leveraging these predictions, organizations can proactively address potential issues and implement targeted retention strategies. The goal is to create a supportive work environment that promotes employee satisfaction and reduces turnover rates.</p>
+    </div>
+</section>
+{%endblock%}

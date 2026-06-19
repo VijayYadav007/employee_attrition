@@ -1,0 +1,74 @@
+{% extends 'users/userbase.html' %}
+
+{% block contents %}
+{% load static %}
+
+<div class="content">
+    <div class="card">
+        <h2>Understanding Employee Attrition</h2>
+        <p>Employee attrition refers to the gradual reduction of the workforce through resignations, retirements, or deaths. Understanding the underlying reasons for attrition is crucial for organizations to improve retention strategies and employee engagement.</p>
+    </div>
+
+    <div class="card">
+        <h2>Data Collection and Analysis</h2>
+        <p>In this project, employee data, including demographics and performance evaluations, is analyzed to predict attrition trends using machine learning algorithms. Feature selection and engineering enhance the predictive capabilities.</p>
+    </div>
+
+    <div class="card">
+        <h2>Model Development</h2>
+        <p>We use algorithms like Random Forest and Logistic Regression for prediction. These models are evaluated using accuracy, precision, recall, and F1-score, with Random Forest providing insights into feature importance.</p>
+    </div>
+
+    <div class="card">
+        <h2>Implementation and Impact</h2>
+        <p>This model, deployed in a web app, allows HR managers to input data and get real-time attrition predictions, helping organizations reduce turnover and enhance employee satisfaction.</p>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h2 {
+        margin-top: 0;
+        color: #007bff;
+        font-size: 1.5em;
+    }
+
+    .card p {
+        line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+        .content {
+            padding: 10px;
+        }
+    }
+</style>
+
+{% endblock %}
